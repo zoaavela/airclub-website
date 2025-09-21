@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aéro-Club Frotey-Les-Lures</title>
+    <link rel="icon" href="/placeholder.svg?height=32&width=32" type="image/svg+xml">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styleacf2l.css">
+</head>
+<body class="bg-dark-blue">
+    <header class="bg-dark-blue sticky-top l shadow-white">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center py-2">
+                <div class="me-3">
+                    <img src="../images/logo.png" alt="Logo ACF2L" style="height: 60px;">
+                </div>
+                <nav class="d-none d-md-block">
+                    <ul class="nav">
+                        <li class="nav-item me-4">
+                            <a class="nav-link text-cream font-ptitre text-decoration-none" href="#">Accueil</a>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link text-cream font-ptitre text-decoration-none" href="#activites">Activités</a>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link text-cream font-ptitre text-decoration-none" href="#vehicules">Véhicules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-cream font-ptitre text-decoration-none" href="#moyens-pedagogiques">Moyens pédagogiques</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-cream font-ptitre text-decoration-none" href="#galerie">Galerie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-cream font-ptitre text-decoration-none" href="#reservation">Réservation</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="min-vh-100 d-flex flex-column mb-3">
+        <main class="flex-grow-1">
+            <div class="bg-cream rounded-4 mx-3 px-5 py-5 d-flex align-items-center justify-content-center min-vh-100">
+                <div class="row w-100 align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="font-gtitre text-dark-blue mb-4">
+                            Aéro-Club<br>
+                            Frotey-Lès-Lures
+                        </h1>
+                        
+                        <p class="font-texte fs-4 text-dark mb-4" style="line-height: 1.4;">
+                            Bienvenue dans ACL2F, l'association vous offre la chance<br>
+                            de pratiquer l'aviation légère dans un environnement exceptionnel.
+                        </p>
+
+                        <p class="font-texte fs-5 fw-semibold text-dark-blue mb-4">
+                            Venez piloter nos ULM !
+                        </p>
+                        
+                        <button class="btn bg-dark-blue text-white px-4 py-3 fs-4 font-texte rounded-2" onclick="document.getElementById('meteo').scrollIntoView({behavior: 'smooth'})">
+                            Nous découvrir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="bg-blue-gray rounded-4 mx-3 py-3" id="meteo">
+        <div class="d-flex justify-content-center">
+            <div class="row text-white text-center w-100 justify-content-around weather-item">
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="../images/tempertature.png" alt="température" class="mb-2">
+                    <div class="font-ptitre">Température</div>
+                    <div class="fs-5 font-texte" id="temperature">--°C</div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="../images/rain.png" alt="précipitations" class="mb-2">
+                    <div class="font-ptitre">Précipitations</div>
+                    <div class="fs-5 font-texte" id="precipitation">-- mm</div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="../images/humidity.png" alt="humidité" class="mb-2">
+                    <div class="font-ptitre">Humidité</div>
+                    <div class="fs-5 font-texte" id="humidity">-- %</div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="../images/windsock.png" alt="vent" class="mb-2">
+                    <div class="font-ptitre">Vent</div>
+                    <div class="fs-5 font-texte" id="wind">-- km/h</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center py-5">
+        <h3 class="font-ptitre text-cream mb-3" id="activites" style="font-size: 80px;">Activités</h3>
+        <h2 class="font-gtitre text-cream mb-4" style="font-size: 55px;">Découvrez nos expériences aériennes</h2>
+        <div class="bg-cream mx-auto mb-3" style="width: 100px; height: 3px; border-radius: 2px;"></div>
+    </div>
+
+<div class="container-fluid">
+        <div class="row mx-3 g-2">
+            <div class="col-lg-6">
+                <div class="bg-medium-blue rounded-4 h-100 d-flex align-items-center justify-content-center p-4" style="min-height: 300px;">
+                    <!-- Updated model-viewer with better fallback and loading attributes -->
+                    <model-viewer 
+                        src="../models/Beechcraft_Model_17.glb" 
+                        alt="Avion 3D"
+                        auto-rotate 
+                        camera-controls 
+                        background-color="#111"
+                        loading="eager"
+                        reveal="auto"
+                        style="width: 100%; height: 100%; display: block;">
+                        <!-- Added fallback content for when model doesn't load -->
+                        <div slot="poster" style="background: #111; color: white; display: flex; align-items: center; justify-content: center; height: 100%;">
+                            <p>Chargement du modèle 3D...</p>
+                        </div>
+                    </model-viewer>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-cream rounded-4 h-100 p-5">
+                    <h3 class="font-ptitre text-dark-blue mb-3">Nos expériences aériennes</h3>
+                    <p class="font-texte text-dark">
+                        L'ACF2L, affilié à la FFULM, propose des expériences aériennes pour tous : vols découverte, formations pilotes et instructeurs, et bien plus.
+                    </p>
+                    <h3 class="font-ptitre text-dark-blue mb-3 mt-5">Au cœur du vol</h3>
+                    <div class="font-texte text-dark">
+                        <ul class="list-unstyled">
+                            <li class="mb-2 position-relative ps-3">
+                                <span class="position-absolute start-0">•</span>
+                                Formations : pilotes et instructeurs.
+                            </li>
+                            <li class="mb-2 position-relative ps-3">
+                                <span class="position-absolute start-0">•</span>
+                                Baptêmes de l'air pour ressentir l'émotion du vol.
+                            </li>
+                            <li class="mb-2 position-relative ps-3">
+                                <span class="position-absolute start-0">•</span>
+                                Maintenance et montage d'ULM et instruments de navigation.
+                            </li>
+                            <li class="mb-2 position-relative ps-3">
+                                <span class="position-absolute start-0">•</span>
+                                Restauration rapide et hébergement pour stagiaires.
+                            </li>
+                            <li class="mb-2 position-relative ps-3">
+                                <span class="position-absolute start-0">•</span>
+                                Location de hangars pour votre ULM.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center py-5">
+        <h3 class="font-ptitre text-cream mb-3" id="vehicules" style="font-size: 80px;">Véhicules</h3>
+        <h2 class="font-gtitre text-cream mb-4" style="font-size: 55px;">Montez à bord de nos aéronefs</h2>
+        <div class="bg-cream mx-auto mb-3" style="width: 100px; height: 3px; border-radius: 2px;"></div>
+    </div>
+
+        <div class="bg-medium-blue rounded-4 h-100 p-5 mx-3">
+            <div class="container">
+                <div class="row justify-content-start g-4">
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border-0 justify-content-start">
+                            <img src="../images/pendulier.png" alt="Pendulier" class="card-img-top mx-auto" style="max-width: 80%;">
+                            <div class="card-body">
+                                <h5 class="card-title font-gtitre text-cream fs-1 px-4">Pendulier</h5>
+                                <p class="card-text text-cream font-texte fs-5 px-4">Planez en pendulaire et savourez la liberté du ciel.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 100px;">
+                        <div class="card bg-transparent border-0 justify-content-start">
+                            <img src="../images/multiaxe.png" alt="Multiaxe" class="card-img-top mx-auto" style="max-width: 80%;">
+                            <div class="card-body">
+                                <h5 class="card-title font-gtitre text-cream fs-1 px-4">Multiaxe</h5>
+                                <p class="card-text text-cream font-texte fs-5 px-4">Pilotez un avion à ailes fixes et ressentez l'adrénaline du vol.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border-0 justify-content-start">
+                            <img src="../images/autogire2.png" alt="Autogire" class="card-img-top mx-auto" style="max-width: 80%;">
+                            <div class="card-body">
+                                <h5 class="card-title font-gtitre text-cream fs-1 px-4">Autogire</h5>
+                                <p class="card-text text-cream font-texte fs-5 px-4">Découvrez l'autogire et le plaisir de voler en toute sérénité.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+    <div class="text-center py-5">
+        <h3 class="font-ptitre text-cream mb-3" id="moyens-pedagogiques" style="font-size: 80px;">Moyens pédagogiques</h3>
+        <h2 class="font-gtitre text-cream mb-4" style="font-size: 55px;">Nos ailes de formation</h2>
+        <div class="bg-cream mx-auto mb-3" style="width: 100px; height: 3px; border-radius: 2px;"></div>
+    </div>
+
+    <section class="bg-medium-blue rounded-4 mx-3 py-5" style="padding: 40px;">
+        <div class="position-relative overflow-hidden py-3 mx-5">
+            <div class="d-flex transition-transform" style="transition: transform 0.6s ease-in-out;" id="carouselWrapper">
+                <div class="carousel-item-custom card text-medium-blue shadow-lg mx-3 rounded-4" style="min-width: 300px;">
+                    <div class="card-body text-center p-4">
+                        <i class="fa-solid fa-arrows-up-down-left-right fa-3x text-medium-blue mb-3"></i>
+                        <h5 class="card-title font-ptitre text-medium-blue">Surface totale</h5>
+                        <p class="card-text font-texte text-dark-blue fs-5">45 hectares dégagés pour toutes vos activités aériennes.</p>
+                    </div>
+                </div>
+                <div class="carousel-item-custom card text-light shadow-lg mx-3 rounded-4" style="min-width: 300px;">
+                    <div class="card-body text-center p-4">
+                        <i class="fa-solid fa-plane fa-3x text-medium-blue mb-4"></i>
+                        <h5 class="card-title font-ptitre text-medium-blue">Pistes</h5>
+                        <p class="card-text font-texte text-dark-blue fs-5">Deux pistes en X : 800 m et 450 m.</p>
+                    </div>
+                </div>
+                <div class="carousel-item-custom card text-light shadow-lg mx-3 rounded-4" style="min-width: 300px;">
+                    <div class="card-body text-center p-4">
+                        <i class="fa-solid fa-droplet fa-3x text-medium-blue mb-3"></i>
+                        <h5 class="card-title font-ptitre text-medium-blue">Hydrosurface</h5>
+                        <p class="card-text font-texte text-dark-blue fs-5">8 hectares pour les vols amphibies.</p>
+                    </div>
+                </div>
+                <div class="carousel-item-custom card text-light shadow-lg mx-3 rounded-4" style="min-width: 300px;">
+                    <div class="card-body text-center p-4">
+                        <i class="fa-solid fa-tent fa-3x text-medium-blue mb-3"></i>
+                        <h5 class="card-title font-ptitre text-medium-blue">Hangars</h5>
+                        <p class="card-text font-texte text-dark-blue fs-5">3 hangars avec 4300 m² de surface couverte.</p>
+                    </div>
+                </div>
+                <div class="carousel-item-custom card text-light shadow-lg mx-3 rounded-4" style="min-width: 300px;">
+                    <div class="card-body text-center p-4">
+                        <i class="fa-solid fa-chalkboard-user fa-3x text-medium-blue mb-3"></i>
+                        <h5 class="card-title font-ptitre text-medium-blue">Salle de cours</h5>
+                        <p class="card-text font-texte text-dark-blue fs-5">Salle multimédia avec simulateur de vol.</p>
+                    </div>
+                </div>
+                <div class="carousel-item-custom card text-light shadow-lg mx-3 rounded-4" style="min-width: 300px;">
+                    <div class="card-body text-center p-4">
+                        <i class="fa-solid fa-wrench fa-3x text-medium-blue mb-3"></i>
+                        <h5 class="card-title font-ptitre text-medium-blue">Atelier</h5>
+                        <p class="card-text font-texte text-dark-blue fs-5">Entretien et réparation de vos ULM.</p>
+                    </div>
+                </div>
+                <div class="carousel-item-custom card text-light shadow-lg mx-3 rounded-4" style="min-width: 300px;">
+                    <div class="card-body text-center p-4">
+                        <i class="fa-solid fa-utensils fa-3x text-medium-blue mb-3"></i>
+                        <h5 class="card-title font-ptitre text-medium-blue">Restauration</h5>
+                        <p class="card-text font-texte text-dark-blue fs-5">Capacités d’accueil et restauration sur place.</p>
+                    </div>
+                </div>
+                <div class="carousel-item-custom card text-light shadow-lg mx-3 rounded-4" style="min-width: 300px;">
+                    <div class="card-body text-center p-4">
+                        <i class="fa-solid fa-wifi fa-3x text-medium-blue mb-3"></i>
+                        <h5 class="card-title font-ptitre text-medium-blue">Wifi</h5>
+                        <p class="card-text font-texte text-dark-blue fs-5">Connexion gratuite sur toute la base.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3 mt-3">
+                <button class="btn text-medium-blue rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: linear-gradient(145deg, #E0E1DD, #778DA9);" id="prevBtn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="btn bg- text-medium-blue rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: linear-gradient(145deg, #E0E1DD, #778DA9);" id="nextBtn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="text-center py-5">
+        <h3 class="font-ptitre text-cream mb-3" id="galerie" style="font-size: 80px;">Galerie</h3>
+        <h2 class="font-gtitre text-cream mb-4" style="font-size: 55px;">Souvenirs et clichés</h2>
+        <div class="bg-cream mx-auto mb-3" style="width: 100px; height: 3px; border-radius: 2px;"></div>
+    </div>
+
+    <section class="gallery-band mb-3 mx-3">
+      <div class="d-flex overflow-hidden px-3 mb-3">
+        <div class="gallery-track">
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo1.jpg" class="card-img-top" alt="img1">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo2.jpg" class="card-img-top" alt="img2">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo3.jpg" class="card-img-top" alt="img3">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo4.jpg" class="card-img-top" alt="img4">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo5.jpg" class="card-img-top" alt="img5">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo6.jpg" class="card-img-top" alt="img6">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo1.jpg" class="card-img-top" alt="img1">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo2.jpg" class="card-img-top" alt="img2">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo3.jpg" class="card-img-top" alt="img3">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo4.jpg" class="card-img-top" alt="img4">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo5.jpg" class="card-img-top" alt="img5">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo6.jpg" class="card-img-top" alt="img6">
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex overflow-hidden px-3">
+        <div class="gallery-track reverse">
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo7.jpg" class="card-img-top" alt="img7">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo8.jpg" class="card-img-top" alt="img8">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo9.jpg" class="card-img-top" alt="img9">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo10.jpg" class="card-img-top" alt="img10">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo11.jpg" class="card-img-top" alt="img11">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo12.jpg" class="card-img-top" alt="img12">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo7.jpg" class="card-img-top" alt="img7">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo8.jpg" class="card-img-top" alt="img8">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo9.jpg" class="card-img-top" alt="img9">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo10.jpg" class="card-img-top" alt="img10">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo11.jpg" class="card-img-top" alt="img11">
+          </div>
+          <div class="gallery-item card shadow-sm border border-secondary">
+            <img src="../images/photo12.jpg" class="card-img-top" alt="img12">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center py-5">
+        <h3 class="font-ptitre text-cream mb-3" id="reservation" style="font-size: 80px;">Réservation</h3>
+        <h2 class="font-gtitre text-cream mb-4" style="font-size: 55px;">Prêt à décoller ?</h2>
+        <div class="bg-cream mx-auto mb-3" style="width: 100px; height: 3px; border-radius: 2px;"></div>
+    </div>
+
+    <section class="bg-cream rounded-4 mx-3 mb-5 py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <h3 class="font-ptitre text-dark-blue fs-5">Informations</h3>
+                        <div class="bg-dark-blue mx-auto mb-3" style="width: 50px; height: 3px; border-radius: 2px;"></div>
+                        <p class="text-muted font-texte fs-5 mb-5">
+                            Association enregistrée n°04674 — Agrément n° AS70986858
+                        </p>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-dark-blue text-cream rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span class="text-muted">acf2l@gmail.com</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-dark-blue text-cream rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span class="text-muted">+33 01 60 56 60 60</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-dark-blue text-cream rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="text-muted">62, Avenue de la République, 70200 Lure</span>
+                        </div>
+
+                        <div class="d-flex justify-content-left gap-2">
+                            <a href="https://www.facebook.com/" target="blank" class="bg-dark-blue text-cream rounded-circle d-flex align-items-center justify-content-center text-decoration-none" style="width: 45px; height: 45px;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://x.com/"  target="blank" class="bg-dark-blue text-cream rounded-circle d-flex align-items-center justify-content-center text-decoration-none" style="width: 45px; height: 45px;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/enzo-abdi-405bbb32a/"  target="blank" class="bg-dark-blue text-cream rounded-circle d-flex align-items-center justify-content-center text-decoration-none" style="width: 45px; height: 45px;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/"  target="blank" class="bg-dark-blue text-cream rounded-circle d-flex align-items-center justify-content-center text-decoration-none" style="width: 45px; height: 45px;">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="text-center mb-4">
+                        <h3 class="font-ptitre text-dark-blue fs-5">Contacter nous !</h3>
+                        <div class="bg-dark-blue mx-auto mb-3" style="width: 50px; height: 3px; border-radius: 2px;"></div>
+                        <p class="text-muted font-texte fs-5">
+                            Laissez votre message, nous vous contacterons dans la semaine
+                        </p>
+                    </div>
+
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control font-text border-2" style="border-color: var(--color-dark-blue);" placeholder="Votre nom">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control font-text border-2" style="border-color: var(--color-dark-blue);" placeholder="Votre email">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control font-text border-2" style="border-color: var(--color-dark-blue);" placeholder="Sujet">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control font-text border-2" style="border-color: var(--color-dark-blue); min-height: 120px;" placeholder="Votre message..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn bg-dark-blue text-cream px-4 py-2">Envoyer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-blue text-cream py-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                    <img src="../images/logo.png" alt="Logo" style="max-width: 100px;">
+                </div>
+                <div class="text-center">
+                    &copy; 2025 Aéro-Club de Frotey-Lès-Lures. Tous droits réservés.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scriptacf2l.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</body>
+</html>

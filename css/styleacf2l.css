@@ -1,0 +1,146 @@
+/* DEBUT SCROLL HTML */
+        html {
+            scroll-padding-top: 80px; /* hauteur de la navbar */
+        }
+/* FIN SCROLL HTML */
+
+/* DEBUT INITIALISATION DES FONTS */
+        @font-face {
+			font-family: 'Grandtitre';
+			src: url('../fonts/Relationship\ of\ mélodrame.woff2') format('woff2');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Texte';
+			src: url('../fonts/Oranienbaum.woff2') format('woff2');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: 'Ptitre';
+			src: url('../fonts/Notable-Regular.woff2') format('woff2');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+        .font-ptitre{
+            font-family: 'Ptitre';
+            font-size: 0.85rem;
+        }
+
+        .font-gtitre{
+            font-family: 'Grandtitre';
+            font-size: 10rem;
+        }
+
+        .font-texte{
+            font-family: 'Texte';
+            font-size: 1.4rem;
+        }
+
+/* FIN INITIALISATION DES FONTS */
+
+/* DEBUT ROOT COLORS */
+
+        :root {
+            --color-dark-blue: #0D1B2A;
+            --color-cream: #E0E1DD;
+            --color-blue-gray: #778DA9;
+            --color-medium-blue: #415A77;
+        }
+
+        /* Custom styles that can't be replaced by Bootstrap */
+        .bg-dark-blue { background-color: var(--color-dark-blue) !important; }
+        .bg-cream { background-color: var(--color-cream) !important; }
+        .bg-blue-gray { background-color: var(--color-blue-gray) !important; }
+        .bg-medium-blue { background-color: var(--color-medium-blue) !important; }
+        .text-dark-blue { color: var(--color-dark-blue) !important; }
+        .text-cream { color: var(--color-cream) !important; }
+        .text-blue-gray { color: var(--color-blue-gray) !important; }
+        .text-medium-blue { color: var(--color-medium-blue) !important; }
+
+        .main-title { 
+            font-size: 7rem; 
+            line-height: 0.9; 
+        }
+        .slogans-title { 
+            font-size: 10rem; 
+            line-height: 0.9; 
+        }
+        .formation-title { 
+            font-size: 3rem; 
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .slogans-title { font-size: 4rem; }
+        }
+        @media (min-width: 577px) and (max-width: 768px) {
+            .main-title { font-size: 4rem; }
+        }
+
+/* FIN ROOT COLORS */
+
+/* DEBUT MOYENS PEDAGOGIQUES CARDS */
+
+        .carousel-item-custom {
+            min-width: 292px;
+            background: linear-gradient(145deg, #E0E1DD, #778DA9);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .carousel-item-custom:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+        }
+
+        .weather-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
+        }
+/* FIN MOYENS PEDAGOGIQUES CARDS */
+
+/* DEBUT GALERIE CSS */
+        .gallery-band {
+      background:#1B263B;
+      border-radius:1rem;
+      padding:1.5rem 0;
+      overflow:hidden;
+      box-shadow:0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .gallery-track {
+      display:flex;
+      gap:1rem;
+      animation: scroll-left 50s linear infinite;
+    }
+    .gallery-track.reverse {
+      animation: scroll-right 50s linear infinite;
+    }
+
+    .gallery-item {
+      min-width:260px;
+    }
+    .gallery-item img {
+      height:180px;
+      object-fit:cover;
+    }
+
+    @keyframes scroll-left {
+      from { transform:translateX(0); }
+      to   { transform:translateX(-50%); }
+    }
+    @keyframes scroll-right {
+      from { transform:translateX(-50%); }
+      to   { transform:translateX(0); }
+    }
+/* FIN GALERIE CSS */
+
+/* DEBUT OMBRE HEADER */
+    .shadow-white {
+        box-shadow: 0 1px 10px #415A77;
+    }
+/* FIN OMBRE HEADER */
