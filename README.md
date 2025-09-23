@@ -28,11 +28,12 @@ airclub-website/
 ├─ html/
 │ └─ index.html # Fichier HTML
 ├─ css/
-│ └─ style.css # Fichier CSS principal
+│ └─ styleacf2l.css # Fichier CSS principal
 ├─ js/
 │ └─ scriptacf2l.js # Scripts JavaScript 
 ├─ images/ # Images du site
 ├─ models/ # Modèles 3D (GLB/GLTF)
+├─ AUDIT.pdf # Audit initial du projet
 └─ README.md # Documentation du projet
 ```
 ## 🚀 Installation / Déploiement
